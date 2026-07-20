@@ -36,6 +36,15 @@ export default function NewLaunches({ launches }) {
                 {l.name} · {l.creator}
                 {l.flags?.length > 0 && <span style={{ color: "var(--red)" }}> · {l.flags[0]}</span>}
               </div>
+              <div className="sub-line mono" style={{ fontSize: 11 }}>
+                {l.blockscoutUrl ? (
+                  <a href={l.blockscoutUrl} target="_blank" rel="noopener noreferrer" style={{ color: "var(--ash-dim)" }}>
+                    {l.addressShort} ↗
+                  </a>
+                ) : (
+                  <span style={{ color: "var(--ash-dim)" }}>contract address unresolved</span>
+                )}
+              </div>
             </div>
             <span className="eyebrow" style={{ flexShrink: 0 }}>
               {l.ago}
