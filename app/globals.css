@@ -215,6 +215,11 @@ body {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border);
 }
+.badge-risk {
+  color: var(--red);
+  background: rgba(255, 65, 54, 0.09);
+  border: 1px solid rgba(255, 65, 54, 0.4);
+}
 
 @media (prefers-reduced-motion: reduce) {
   *,

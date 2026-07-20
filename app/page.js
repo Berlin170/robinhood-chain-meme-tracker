@@ -6,9 +6,10 @@ import TopMovers from "../components/TopMovers";
 import SmartMoney from "../components/SmartMoney";
 import { getLiveDashboardData } from "../lib/liveData";
 
-// re-fetch chain data at most every 30s (matches the cache window in
-// lib/goldrush.js) instead of on every request.
-export const revalidate = 30;
+// re-fetch chain data at most every 15s — fast enough that new launch
+// factory calls (lib/blockscout.js getFactoryLaunches, cached 15s) show
+// up close to real time without hammering the underlying APIs.
+export const revalidate = 15;
 
 export default async function Page() {
   const { live, stats, movers, smartMoney, newLaunches } = await getLiveDashboardData();
